@@ -26,24 +26,24 @@ def login():
     time.sleep(1)
     w.switch_to.window(w.window_handles[1])
     time.sleep(1)
-    print("Second window title = " + w.title)
+    # print("Second window title = " + w.title)
     time.sleep(1)
     password = w.find_element(By.XPATH, '//*[@id="password"]')
-    password.send_keys('test') #set your password
+    password.send_keys('test')  # set your password
     time.sleep(3)
     password.send_keys(Keys.ENTER)
     time.sleep(3)
+    # check if button "Got It" exist
     gotIt = w.find_element(By.XPATH, '//*[@id="popover-content"]/div/div/section/div[3]/button')
 
     if gotIt != '':
         gotIt.click()
-
     time.sleep(3)
+
     w.find_element(By.XPATH, '//*[@id="app-content"]/div/div[2]/div/div[3]/div[2]/button[2]').click()
     time.sleep(3)
 
     w.find_element(By.XPATH, '//*[@id="app-content"]/div/div[2]/div/div[2]/div[2]/div[2]/footer/button[2]').click()
-
     time.sleep(15)
 
 
